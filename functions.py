@@ -6,11 +6,23 @@ def insert_name():
     while len(name) == 0:
         print("Vous n'avez pas saisi votre nom")
         name = input("Entrez votre nom:")
+    return name
 insert_name()
 
-def choose_word():
-
+def choice_pc():
 # lecture from objects contained in file
     word_pc = random.choice(liste_mots)
     print(word_pc)
-choose_word()
+    length_word_pc = len(word_pc)
+    star = "*"
+    print(length_word_pc * star)
+    return word_pc
+
+
+def choice_letter():
+    word_pc = choice_pc()
+    letter = input("Veuillez proposer une lettre ou le mot:")
+    letter = str(letter)
+    while len(letter) < 1 or len(letter) > len(word_pc):
+            letter = input("Veuillez proposer une lettre ou le mot:")
+    return letter
